@@ -1,10 +1,13 @@
 import "./App.css";
+import Blog from "./components/Blog/Blog";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <>
-      <h1>Welcome</h1>
-    </>
+    <div className="container mx-auto">
+      <Header></Header>
+      <Blog></Blog>
+    </div>
   );
 }
 
