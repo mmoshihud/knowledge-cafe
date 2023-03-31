@@ -1,8 +1,8 @@
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import BookmarkedBlog from "../BookmarkedBlog/BookmarkedBlog";
 import Card from "../Card/Card";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Blog = () => {
   const [blog, setBlog] = useState([]);
@@ -12,7 +12,9 @@ const Blog = () => {
   const onBookmarkHandler = (title, id) => {
     const addedBookmark = [...bookmark, { title, id }];
     setBookmark(addedBookmark);
+
     const existingBookmark = bookmark.find((bookmark) => bookmark.id === id);
+
     if (existingBookmark) {
       toast.warn("You Have Already Bookmarked This Blog!", {
         position: "top-center",
