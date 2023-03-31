@@ -3,8 +3,8 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Card = (props) => {
-  const onBookmarkHandler = (title) => {
-    props.onBookmarkHandler(title);
+  const onBookmarkHandler = (title, id) => {
+    props.onBookmarkHandler(title, id);
   };
 
   const readHandler = (time) => {
@@ -28,7 +28,7 @@ const Card = (props) => {
               <div>
                 <h1 className="text-xl font-bold">{blogs.name}</h1>
                 <p className="text-sm">
-                  {blogs.date.toDateString()} ({blogs.countDays} day
+                  {blogs.publish_date.toDateString()} ({blogs.countDays} day
                   {parseInt(blogs.countDays) > 1 ? <span>s</span> : ""} ago )
                 </p>
               </div>
@@ -37,7 +37,7 @@ const Card = (props) => {
                 <FontAwesomeIcon
                   className="icon"
                   icon={faBookmark}
-                  onClick={() => onBookmarkHandler(blogs.title)}
+                  onClick={() => onBookmarkHandler(blogs.title, blogs.id)}
                 ></FontAwesomeIcon>
               </p>
             </div>

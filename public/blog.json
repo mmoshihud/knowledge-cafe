@@ -6,7 +6,7 @@
     "image": "https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg",
     "banner": "https://images.unsplash.com/photo-1519669417670-68775a50919c",
     "tags": "#hacking #programming",
-    "date": "2023-03-31",
+    "publish_date": "2023-03-31",
     "time": 5
   },
   {
@@ -16,7 +16,7 @@
     "image": "https://img.freepik.com/free-vector/flat-customer-support-illustration_23-2148899114.jpg",
     "banner": "https://images.unsplash.com/photo-1605379399642-870262d3d051",
     "tags": "#beginners #programming",
-    "date": "2023-01-01",
+    "publish_date": "2023-01-01",
     "time": 10
   },
   {
@@ -26,7 +26,17 @@
     "image": "https://img.freepik.com/premium-vector/female-company-employee-has-lot-paperwork-coming_1150-51078.jpg",
     "banner": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
     "tags": "#beginners #programming",
-    "date": "2020-07-31",
+    "publish_date": "2020-07-31",
     "time": 12
+  },
+  {
+    "id": "x3x85",
+    "name": "Grace Hopper",
+    "title": "Unlocking the Secrets of Big Data for Mankind to get the Betterment of the Universe",
+    "image": "https://img.freepik.com/premium-vector/female-company-employee-has-lot-paperwork-coming_1150-51078.jpg",
+    "banner": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "tags": "#beginners #programming",
+    "publish_date": "2020-07-31",
+    "time": 60
   }
 ]

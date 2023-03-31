@@ -1,16 +1,41 @@
 import { useEffect, useState } from "react";
 import BookmarkedBlog from "../BookmarkedBlog/BookmarkedBlog";
 import Card from "../Card/Card";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Blog = () => {
   const [blog, setBlog] = useState([]);
   const [bookmark, setBookmark] = useState([]);
   const [readTime, setReadTime] = useState(0);
 
-  const onBookmarkHandler = (title) => {
-    const addedBookmark = [...bookmark, title];
+  const onBookmarkHandler = (title, id) => {
+    const addedBookmark = [...bookmark, { title, id }];
     setBookmark(addedBookmark);
-    console.log(bookmark);
+    const existingBookmark = bookmark.find((bookmark) => bookmark.id === id);
+    if (existingBookmark) {
+      toast.warn("You Have Already Bookmarked This Blog!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    } else {
+      toast.success("Congratulations, You have successfully added a bookmark", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
   };
 
   const readHandler = (time) => {
@@ -23,9 +48,9 @@ const Blog = () => {
       .then((data) => {
         const convertDate = data.map((item) => ({
           ...item,
-          date: new Date(item.date),
+          publish_date: new Date(item.publish_date),
           countDays: Math.floor(
-            (new Date() - new Date(item.date)) / (1000 * 60 * 60 * 24)
+            (new Date() - new Date(item.publish_date)) / (1000 * 60 * 60 * 24)
           ),
         }));
         setBlog(convertDate);
@@ -35,13 +60,14 @@ const Blog = () => {
   return (
     <div>
       <hr />
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row">
         <Card
           blog={blog}
           onBookmarkHandler={onBookmarkHandler}
           readHandler={readHandler}
         ></Card>
         <BookmarkedBlog bookmark={bookmark} time={readTime}></BookmarkedBlog>
+        <ToastContainer />
       </div>
     </div>
   );
