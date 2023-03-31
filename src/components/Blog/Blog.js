@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
-import BookmarkedBlog from "../BookmarkedBLog/BookmarkedBlog";
+import BookmarkedBlog from "../BookmarkedBlog/BookmarkedBlog";
 import Card from "../Card/Card";
 
 const Blog = () => {
   const [blog, setBlog] = useState([]);
   const [bookmark, setBookmark] = useState([]);
+  const [readTime, setReadTime] = useState(0);
 
-  const onBookmarkHandler = (value) => {
-    const addedBookmark = [...bookmark, value];
+  const onBookmarkHandler = (title) => {
+    const addedBookmark = [...bookmark, title];
     setBookmark(addedBookmark);
     console.log(bookmark);
+  };
+
+  const readHandler = (time) => {
+    setReadTime(readTime + time);
   };
 
   useEffect(() => {
@@ -31,8 +36,12 @@ const Blog = () => {
     <div>
       <hr />
       <div className="flex gap-4">
-        <Card blog={blog} onBookmarkHandler={onBookmarkHandler}></Card>
-        <BookmarkedBlog bookmark={bookmark}></BookmarkedBlog>
+        <Card
+          blog={blog}
+          onBookmarkHandler={onBookmarkHandler}
+          readHandler={readHandler}
+        ></Card>
+        <BookmarkedBlog bookmark={bookmark} time={readTime}></BookmarkedBlog>
       </div>
     </div>
   );

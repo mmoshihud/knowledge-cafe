@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 **Surge: [Knowledge Cafe](https://aggressive-love.surge.sh)**
 
+**I converted the json to object and used new Date object so I can count the days from Date**
+
 ## Available Scripts
 
 In the project directory, you can run:

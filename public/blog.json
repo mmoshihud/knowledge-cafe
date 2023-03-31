@@ -3,30 +3,30 @@
     "id": "3a931",
     "name": "Linus Torvalds",
     "title": "Unleashing the Power of Ethical Hacking to Save the World",
-    "image": "",
+    "image": "https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg",
     "banner": "https://images.unsplash.com/photo-1519669417670-68775a50919c",
     "tags": "#hacking #programming",
-    "date": "2023-03-30",
+    "date": "2023-03-31",
     "time": 5
   },
   {
     "id": "9330f",
     "name": "Ada Lovelace",
     "title": "The Coding Chronicles: Stories and Lessons from the World of Programming",
-    "image": "",
+    "image": "https://img.freepik.com/free-vector/flat-customer-support-illustration_23-2148899114.jpg",
     "banner": "https://images.unsplash.com/photo-1605379399642-870262d3d051",
     "tags": "#beginners #programming",
-    "date": "2023-03-20",
+    "date": "2023-01-01",
     "time": 10
   },
   {
     "id": "53887",
     "name": "Tim Berners-Lee",
     "title": "Exploring the World of Programming by just self learning",
-    "image": "",
+    "image": "https://img.freepik.com/premium-vector/female-company-employee-has-lot-paperwork-coming_1150-51078.jpg",
     "banner": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
     "tags": "#beginners #programming",
-    "date": "2022-02-15",
+    "date": "2020-07-31",
     "time": 12
   }
 ]

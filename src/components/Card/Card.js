@@ -1,12 +1,16 @@
 import "./Card.css";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import blogger from "../../images/blogger-1.jpg";
 
 const Card = (props) => {
-  const onBookmarkHandler = (val) => {
-    props.onBookmarkHandler(val);
+  const onBookmarkHandler = (title) => {
+    props.onBookmarkHandler(title);
   };
+
+  const readHandler = (time) => {
+    props.readHandler(time);
+  };
+
   return (
     <div className="card w-7/12 bg-base-100 shadow-2xl p-4 mt-4">
       {props.blog.map((blogs) => (
@@ -18,7 +22,7 @@ const Card = (props) => {
             <div className="flex">
               <img
                 className="w-24 rounded-full mr-4"
-                src={blogger}
+                src={blogs.image}
                 alt="User"
               />
               <div>
@@ -39,7 +43,12 @@ const Card = (props) => {
             </div>
             <h2 className="card-title">{blogs.title}</h2>
             <p>{blogs.tags}</p>
-            <p className="icon text-primary underline">Mark as read</p>
+            <p
+              className="icon text-primary underline"
+              onClick={() => readHandler(blogs.time)}
+            >
+              Mark as read
+            </p>
           </div>
           <hr />
         </div>
