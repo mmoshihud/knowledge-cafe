@@ -1,4 +1,4 @@
-const BookmarkedBlog = () => {
+const BookmarkedBlog = (props) => {
   return (
     <div className="card w-5/12 bg-base-100 shadow-2xl h-1/2 mt-4">
       <div className="card-body">
@@ -8,13 +8,15 @@ const BookmarkedBlog = () => {
           </div>
         </div>
         <h2 className="card-title mb-4">Bookmarked Blogs: </h2>
-        <div className="card bg-primary-focus text-primary-content">
-          <div className="card-body">
-            <h2 className="card-title">
-              Master Microsoft Power Platform and Become an In-Demand!
-            </h2>
+        {props.bookmark.map((item) => (
+          <div className="card bg-primary-focus text-primary-content">
+            <div className="card-body">
+              <div key={item}>
+                <h2 className="card-title">{item}</h2>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

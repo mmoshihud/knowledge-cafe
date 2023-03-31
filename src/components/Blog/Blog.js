@@ -4,6 +4,13 @@ import Card from "../Card/Card";
 
 const Blog = () => {
   const [blog, setBlog] = useState([]);
+  const [bookmark, setBookmark] = useState([]);
+
+  const onBookmarkHandler = (value) => {
+    const addedBookmark = [...bookmark, value];
+    setBookmark(addedBookmark);
+    console.log(bookmark);
+  };
 
   useEffect(() => {
     fetch("/blog.json")
@@ -24,14 +31,11 @@ const Blog = () => {
     <div>
       <hr />
       <div className="flex gap-4">
-        <Card blog={blog}></Card>
-        <BookmarkedBlog></BookmarkedBlog>
+        <Card blog={blog} onBookmarkHandler={onBookmarkHandler}></Card>
+        <BookmarkedBlog bookmark={bookmark}></BookmarkedBlog>
       </div>
     </div>
   );
 };
 
 export default Blog;
-<>
-  <h1>ok</h1>
-</>;
