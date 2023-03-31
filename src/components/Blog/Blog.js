@@ -5,7 +5,7 @@ const Blog = () => {
   return (
     <div>
       <hr />
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-4">
         <Card></Card>
         <BookmarkedBlog></BookmarkedBlog>
       </div>
